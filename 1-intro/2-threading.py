@@ -23,7 +23,7 @@ def main():
     start = time.time()
     
     threads = []
-    for i in range(1, 4):
+    for i in range(1, 6):
         t = threading.Thread(target=make_burger, args=(i,))
         threads.append(t)
         t.start()
