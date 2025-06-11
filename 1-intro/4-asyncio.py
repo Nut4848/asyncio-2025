@@ -23,7 +23,7 @@ async def main():
     start = time.time()
 
     # สร้าง task async สำหรับนักเรียนแต่ละคน
-    tasks = [asyncio.create_task(make_burger(i)) for i in range(1, 6)]
+    tasks = [asyncio.create_task(make_burger(i)) for i in range(1, 100)]
 
     # รอให้ทุก task เสร็จ
     await asyncio.gather(*tasks)
