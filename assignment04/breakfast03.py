@@ -23,7 +23,7 @@ async def main():  # 1
 
     coffee_task = asyncio.create_task(make_coffee())
 
-    await asyncio.sleep(0)
+    await asyncio.sleep(1)
 
     eggs_task = asyncio.create_task(fry_eggs())
 
