@@ -1,5 +1,4 @@
 # Create 1 Task with High-Level API
-# Create 1 Task with High-Level API
 import asyncio
 
 async def do_something():
