@@ -4,12 +4,15 @@ from flask import Flask, render_template
 
 # Import blueprints from sync and async route folders
 from sync_routes.routes import sync_bp
+from async_routes.routes import async_bp
 
 # Initialize the Flask application
 app = Flask(__name__)
 
 # Register sync and async blueprints under different URL prefixes
 app.register_blueprint(sync_bp, url_prefix="/sync")
+app.register_blueprint(async_bp, url_prefix="/async")
+
 
 # Define constant using Flask's config dictionary
 app.config["NUMBER_OF_XKCD"] = 7  # Used to control how many XKCD to fetch
