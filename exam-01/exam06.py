@@ -10,9 +10,12 @@ async def risky_task():
     raise ValueError("Something went wrong!")
 
 async def main():
-    try:
-        await asyncio.gather(risky_task(), risky_task())
-        
-    except Exception as e:
-        print("Caught:", e)
+    results = await asyncio.gather(
+        risky_task(), 
+        risky_task(), 
+        return_exceptions=True  
+    )
+    print(results)
+
 asyncio.run(main())
+

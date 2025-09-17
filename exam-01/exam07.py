@@ -19,7 +19,8 @@ async def worker(i):
 
 async def main():
     tasks = [asyncio.create_task(worker(i)) for i in range(3)]
-    for t in tasks:
-        t.result()
+    await asyncio.gather(*tasks)   
+    results = [t.result() for t in tasks] 
+    print("Result:", results)
 
 asyncio.run(main())
