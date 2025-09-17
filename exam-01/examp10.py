@@ -24,6 +24,7 @@ async def main():
     tasks = []
     for i in range(3):
         tasks.append(asyncio.create_task(worker(f"Task-{i}", i+1)))
+        await tasks
     
     print("All tasks scheduled")
 

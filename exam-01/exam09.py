@@ -35,4 +35,3 @@ async def main():
         print("Result:", await r)
 
 asyncio.run(main())
-asyncio.run(main())
